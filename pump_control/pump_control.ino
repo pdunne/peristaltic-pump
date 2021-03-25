@@ -5,30 +5,19 @@
  */
 
 /*
-  Peristaltic Pump Control
+Peristaltic Pump Control
 
-	* Use a toggle switch to change between off, forward, and reverse flow
-  * A potentiometer to vary the rotation rate of the DC motor.
-  * Output the rotation direction and rotation rate as calibrated flow rate on a
-  128x64 OLED
+* Use a toggle switch to change between off, forward, and reverse flow
+* A potentiometer to vary the rotation rate of the DC motor.
+* Output the rotation direction and rotation rate as calibrated flow rate on a
+128x64 OLED
 
+Created October 2020
+By Peter Dunne
 
-	The circuit:
-	* Toggle Switch on pins 7, 8 for detecting rotation direction
-	* list the components attached to each output
-
-  L293D DC motor drive
-
-
-	Created October 2020
-	By Peter Dunne
-	
-
-	https://www.applied-magnetism.com/
-  https://github.com/pdunne/peristaltic-pump
+https://www.applied-magnetism.com/
+https://github.com/pdunne/peristaltic-pump
 */
-
-/******************************************/
 
 #include <SPI.h>
 #include <Wire.h>
