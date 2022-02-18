@@ -2,10 +2,10 @@
 
 Arduino code and electronics design for a simple peristaltic pump.
 
-* Use a toggle switch to change between off, forward, and reverse flow
-* A potentiometer to vary the rotation rate of the DC motor.
-* Output the rotation direction and rotation rate as calibrated flow rate on a
-  128x64 OLED
+- Use a toggle switch to change between off, forward, and reverse flow
+- A potentiometer to vary the rotation rate of the DC motor.
+- Output the rotation direction and rotation rate as calibrated flow rate on a 128x64 OLED
+- Can control two pumps simultaneously
 
 ## Getting Started
 
