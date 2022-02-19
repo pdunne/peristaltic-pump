@@ -2,10 +2,10 @@
 #include "control.h"
 
 //TODO: Dummy variables, need to be measured and updated
-Calib fwdA = {4.11331682e-05, -2.42744217e-02, 5.12851003e+00, -3.38448966e+02};
-Calib revA = fwdA;
-Calib fwdB = {-1.72290739e-05, 1.20133993e-02, -2.54089495e+00, 1.76741358e+02};
-Calib revB = fwdB;
+Calib fwdA = {0.0, 0.0, 0.8, -133.0};
+Calib revA = {0.0, 0.0, 0.81, -139.0};
+Calib fwdB = {0.0, 0.0, 0.82, -135.0};
+Calib revB = {0.0, 0.0, 0.8, -132.0};
 
 // Initialises pullup pins for switch detection
 void init_switch(Control *control)
