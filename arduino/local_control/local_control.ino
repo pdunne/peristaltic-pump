@@ -70,6 +70,9 @@ void loop()
     // Display Flow rate
     print_flow_rate(&display, &assemA);
     print_flow_rate(&display, &assemB);
+
+    // print_pwm(&display, &assemA);
+    // print_pwm(&display, &assemB);
     // print_flow_rate(&display, flowB.flowRate, motB.id);
 
     display.display();

@@ -78,16 +78,21 @@ void loop()
         motor_check(&display, &assemB);
 
         // Display Flow rate
-        print_flow_rate(&display, &assemA);
-        print_flow_rate(&display, &assemB);
-        // print_flow_rate(&display, flowB.flowRate, motB.id);
-        display.setCursor(70, 0);
+        print_pwm(&display, &assemA);
+        print_pwm(&display, &assemB);
+
+        display.setCursor(0, 48);
         current_time = millis();
-        display.print((end_time - current_time) / 1000, DEC);
+        display.print((end_time - current_time) / 1000L, DEC);
 
         display.print(" s");
 
         display.display();
         delay(loop_delay);
+    }
+    else
+    {
+        motor_stop(&display, &motA);
+        motor_stop(&display, &motB);
     }
 }

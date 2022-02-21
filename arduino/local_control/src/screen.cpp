@@ -46,3 +46,18 @@ void print_flow_rate(Screen *display, Assem *assem)
 
     (*display).println(assem->flow->flowRate, 1);
 }
+
+// Prints flow rate on OLED
+void print_pwm(Screen *display, Assem *assem)
+{
+    if (assem->motor->id == 1)
+    {
+        (*display).setCursor(72, 8);
+    }
+    else
+    {
+        (*display).setCursor(72, 24);
+    }
+
+    (*display).println(assem->flow->dutyCycle, 1);
+}

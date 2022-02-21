@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "control.h"
 
-//TODO: Dummy variables, need to be measured and updated
+//TODO: Dummy variables revA, revB, need to be measured and updated
 Calib fwdA = {4.11331682e-05, -2.42744217e-02, 5.12851003e+00, -3.38448966e+02};
 Calib revA = fwdA;
 Calib fwdB = {-1.72290739e-05, 1.20133993e-02, -2.54089495e+00, 1.76741358e+02};
@@ -39,11 +39,11 @@ float conv_flow_rate(byte dutyCycle, byte flag, byte id)
     {
         if (flag == 2)
         {
-            return get_flow_rate(dutyCycle, &revB);
+            return get_flow_rate((float)dutyCycle, &revB);
         }
         else
         {
-            return get_flow_rate(dutyCycle, &fwdB);
+            return get_flow_rate((float)dutyCycle, &fwdB);
         }
     }
 
@@ -51,22 +51,22 @@ float conv_flow_rate(byte dutyCycle, byte flag, byte id)
     {
         if (flag == 2)
         {
-            return get_flow_rate(dutyCycle, &revA);
+            return get_flow_rate((float)dutyCycle, &revA);
         }
         else
         {
-            return get_flow_rate(dutyCycle, &fwdB);
+            return get_flow_rate((float)dutyCycle, &fwdA);
         }
     }
 }
 
 // Converts dutyCycle to calibrated flow rate
-float get_flow_rate(byte dutyCycle, Calib *calib)
+float get_flow_rate(float dutyCycle_f, Calib *calib)
 {
     // Third order polynomial.
     // Table lookup would be more efficient, but not needed
 
-    float flow_rate = ((calib->a) * dutyCycle * dutyCycle * dutyCycle) + ((calib->b) * dutyCycle * dutyCycle) + ((calib->c) * dutyCycle) + (calib->d);
+    float flow_rate = ((calib->a) * dutyCycle_f * dutyCycle_f * dutyCycle_f) + ((calib->b) * dutyCycle_f * dutyCycle_f) + ((calib->c) * dutyCycle_f) + (calib->d);
     return flow_rate;
 }
 

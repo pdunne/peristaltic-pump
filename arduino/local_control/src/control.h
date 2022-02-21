@@ -19,7 +19,7 @@ void init_switch(Control *control);
 void init_motor(const Motor *motor);
 void off_motor(const Motor *motor);
 float conv_flow_rate(byte dutyCycle, byte flag, byte id);
-float get_flow_rate(byte dutyCycle, Calib *calib);
+float get_flow_rate(float dutyCycle_f, Calib *calib);
 void control_flow(Assem *assem);
 
 #endif

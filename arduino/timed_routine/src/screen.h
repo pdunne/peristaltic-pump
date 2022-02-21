@@ -19,4 +19,5 @@ commented out for older versions of header. */
 void init_display(Screen *display, Assem *assemA, Assem *assemB);
 void print_flow_rate(Screen *display, Assem *assem);
 void print_flow_range(Screen *display, Assem *assem);
+void print_pwm(Screen *display, Assem *assem);
 #endif
